@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-    <title>Uncensored English | Rators Club</title>
+    <title>The Anatomy of Swearing | Rators Club</title>
     
     <link rel="icon" type="image/png" href="https://drive.google.com/thumbnail?id=1bOFY9XiVAv-WRQnVHXSnL5FHVEoK3UAp&sz=w128">
     <link rel="apple-touch-icon" href="https://drive.google.com/thumbnail?id=1bOFY9XiVAv-WRQnVHXSnL5FHVEoK3UAp&sz=w512">
@@ -18,24 +18,25 @@
 
     <style>
         /* ==========================================================================
-           1. UNDERGROUND THEME (DARK & EXPLICIT)
+           1. UNDERGROUND EXPLICIT THEME (DARK MODE)
            ========================================================================== */
         :root {
             --bg-base: #09090B;        /* Zinc 950 */
             --bg-panel: #18181B;       /* Zinc 900 */
             --bg-card: #27272A;        /* Zinc 800 */
             
-            --uc-red: #E11D48;         /* Rose 600 - Danger */
-            --uc-red-glow: rgba(225, 29, 72, 0.5);
-            --uc-yellow: #F59E0B;      /* Warning */
-            --uc-green: #10B981;       /* Safe */
+            --uc-red: #E11D48;         /* Rose 600 - Danger/Explicit */
+            --uc-yellow: #F59E0B;      /* Amber 500 - Warning/Medium */
+            --uc-green: #10B981;       /* Emerald 500 - Safe/Mild */
+            --uc-purple: #8B5CF6;      /* Violet 500 - Grammar/Phrasals */
             --uc-white: #FAFAFA;
             
             --text-main: #E4E4E7;
             --text-muted: #A1A1AA;
             
-            --sidebar-width: 280px;
-            --border-glass: 1px solid rgba(255, 255, 255, 0.05);
+            --sidebar-width: 300px;
+            --border-glass: 1px solid rgba(255, 255, 255, 0.08);
+            --shadow-red: 0 0 20px rgba(225, 29, 72, 0.3);
             --trans: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
@@ -44,26 +45,28 @@
         body {
             font-family: 'Inter', sans-serif; background-color: var(--bg-base);
             color: var(--text-main); line-height: 1.6; overflow-x: hidden; display: flex; min-height: 100vh;
-            background-image: radial-gradient(circle at 50% 0%, rgba(225, 29, 72, 0.05), transparent 50%);
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(225, 29, 72, 0.05), transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(245, 158, 11, 0.03), transparent 40%);
         }
 
         h1, h2, h3, h4 { font-family: 'Outfit', sans-serif; letter-spacing: -0.5px; color: var(--uc-white); }
         
-        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: var(--bg-base); }
-        ::-webkit-scrollbar-thumb { background: var(--bg-card); border-radius: 10px; }
+        ::-webkit-scrollbar-thumb { background: #3F3F46; border-radius: 10px; }
         ::-webkit-scrollbar-thumb:hover { background: var(--uc-red); }
 
         .hazard-stripe {
             background: repeating-linear-gradient(-45deg, var(--uc-yellow), var(--uc-yellow) 10px, #000 10px, #000 20px);
-            height: 6px; width: 100%;
+            height: 8px; width: 100%;
         }
         .hazard-stripe.red {
             background: repeating-linear-gradient(-45deg, var(--uc-red), var(--uc-red) 10px, #000 10px, #000 20px);
         }
 
         /* ==========================================================================
-           2. GATEWAY (RESTRICTED ACCESS)
+           2. SECURITY GATEWAY (RESTRICTED ACCESS)
            ========================================================================== */
         #gateway {
             position: fixed; inset: 0; background: var(--bg-base); z-index: 9999;
@@ -72,29 +75,29 @@
         }
         
         .gateway-logo {
-            width: 140px; height: 140px; border-radius: 50%; padding: 4px;
+            width: 150px; height: 150px; border-radius: 50%; padding: 5px;
             background: linear-gradient(135deg, var(--uc-red), #000);
-            margin-bottom: 1.5rem; box-shadow: 0 0 40px var(--uc-red-glow);
+            margin-bottom: 1.5rem; box-shadow: var(--shadow-red);
         }
-        .gateway-logo img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; border: 3px solid var(--bg-base); }
+        .gateway-logo img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; border: 4px solid var(--bg-base); }
         
-        .gateway-title { font-size: 3rem; font-weight: 900; color: var(--uc-white); text-transform: uppercase; margin-bottom: 0.5rem; }
-        .badge-18 { background: var(--uc-red); color: white; padding: 4px 12px; border-radius: 4px; font-weight: 800; font-size: 1.2rem; margin-bottom: 2rem; display: inline-block; font-family: 'Outfit'; }
+        .gateway-title { font-size: 3.5rem; font-weight: 900; color: var(--uc-white); text-transform: uppercase; margin-bottom: 0.5rem; line-height: 1; }
+        .badge-18 { background: var(--uc-red); color: white; padding: 6px 16px; border-radius: 6px; font-weight: 800; font-size: 1.2rem; margin-bottom: 2rem; display: inline-block; font-family: 'Outfit'; letter-spacing: 1px; }
         
         .name-input {
-            width: 100%; max-width: 350px; padding: 18px 25px; border-radius: 8px;
+            width: 100%; max-width: 400px; padding: 20px 25px; border-radius: 8px;
             border: 1px solid var(--bg-card); background: rgba(255,255,255,0.02); text-align: center;
-            font-family: 'Outfit'; font-size: 1.2rem; font-weight: 700; color: var(--uc-white);
+            font-family: 'Outfit'; font-size: 1.3rem; font-weight: 700; color: var(--uc-white);
             transition: var(--trans); margin-bottom: 25px;
         }
-        .name-input:focus { border-color: var(--uc-red); box-shadow: 0 0 15px var(--uc-red-glow); }
+        .name-input:focus { border-color: var(--uc-red); box-shadow: inset 0 0 15px rgba(225, 29, 72, 0.1); }
         
         .btn-red {
-            background: var(--uc-red); color: white; padding: 16px 40px; border-radius: 4px;
-            border: none; font-size: 1.1rem; font-weight: 800; font-family: 'Outfit';
-            cursor: pointer; letter-spacing: 2px; transition: 0.2s; text-transform: uppercase; width: 100%; max-width: 350px;
+            background: var(--uc-red); color: white; padding: 18px 45px; border-radius: 6px;
+            border: none; font-size: 1.2rem; font-weight: 800; font-family: 'Outfit';
+            cursor: pointer; letter-spacing: 2px; transition: 0.2s; text-transform: uppercase; width: 100%; max-width: 400px;
         }
-        .btn-red:hover { background: #BE123C; box-shadow: 0 0 20px var(--uc-red-glow); }
+        .btn-red:hover { background: #BE123C; box-shadow: var(--shadow-red); transform: translateY(-2px); }
         .btn-red:active { transform: scale(0.95); }
 
         /* ==========================================================================
@@ -106,23 +109,23 @@
             display: flex; flex-direction: column; transition: transform var(--trans);
         }
 
-        .sidebar-header { padding: 2rem 1.5rem; text-align: center; border-bottom: var(--border-glass); }
-        .rc-logo-mini { width: 70px; height: 70px; margin: 0 auto 1rem; border-radius: 12px; border: 2px solid var(--uc-red); overflow: hidden; }
+        .sidebar-header { padding: 2.5rem 1.5rem 1.5rem; text-align: center; border-bottom: var(--border-glass); }
+        .rc-logo-mini { width: 80px; height: 80px; margin: 0 auto 1rem; border-radius: 12px; border: 2px solid var(--uc-red); overflow: hidden; }
         .rc-logo-mini img { width: 100%; height: 100%; object-fit: cover; }
-        .rc-title { font-family: 'Outfit'; font-size: 1.3rem; font-weight: 900; color: var(--uc-white); }
-        .rc-subtitle { font-size: 0.75rem; color: var(--uc-red); text-transform: uppercase; letter-spacing: 2px; font-weight: 700; margin-top: 5px; }
+        .rc-title { font-family: 'Outfit'; font-size: 1.5rem; font-weight: 900; color: var(--uc-white); }
+        .rc-subtitle { font-size: 0.8rem; color: var(--uc-red); text-transform: uppercase; letter-spacing: 2px; font-weight: 700; margin-top: 5px; }
 
         .nav-menu { padding: 1.5rem 1rem; flex: 1; display: flex; flex-direction: column; gap: 5px; overflow-y: auto; }
+        .nav-label { font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; margin: 15px 0 5px 10px; font-weight: 800; font-family: 'Outfit'; }
+        
         .nav-link {
             width: 100%; padding: 14px 18px; border-radius: 8px; background: transparent; border: 1px solid transparent;
             color: var(--text-muted); text-align: left; font-size: 0.95rem; font-weight: 600; font-family: 'Inter';
             cursor: pointer; transition: 0.2s; display: flex; align-items: center; gap: 15px;
         }
-        .nav-link i { font-size: 1.1rem; width: 20px; text-align: center; }
-        .nav-link:hover { background: rgba(255,255,255,0.02); color: var(--uc-white); }
+        .nav-link i { font-size: 1.2rem; width: 20px; text-align: center; }
+        .nav-link:hover { background: rgba(255,255,255,0.03); color: var(--uc-white); }
         .nav-link.active { background: rgba(225, 29, 72, 0.1); border-color: rgba(225, 29, 72, 0.2); color: var(--uc-red); font-weight: 700; }
-
-        .nav-label { font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; margin: 15px 0 5px 10px; font-weight: 700; }
 
         /* ==========================================================================
            4. MAIN CONTENT & RESPONSIVE
@@ -133,7 +136,7 @@
         .mobile-brand { display: flex; align-items: center; gap: 10px; font-family: 'Outfit'; font-weight: 800; color: var(--uc-white); font-size: 1.2rem; }
         .btn-menu { background: transparent; border: none; color: var(--uc-white); font-size: 1.5rem; cursor: pointer; }
 
-        .content-container { padding: 3rem; max-width: 950px; margin: 0 auto; width: 100%; flex: 1; }
+        .content-container { padding: 3rem 4rem; max-width: 1100px; margin: 0 auto; width: 100%; flex: 1; }
         .sidebar-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.8); z-index: 999; display: none; opacity: 0; transition: 0.3s; }
 
         @media (max-width: 1024px) {
@@ -142,90 +145,116 @@
             .main-wrapper { margin-left: 0; width: 100%; }
             .mobile-header { display: flex; }
             .sidebar-overlay.active { display: block; opacity: 1; }
-            .content-container { padding: 1.5rem 1rem; }
+            .content-container { padding: 2rem 1.5rem; }
         }
 
         /* ==========================================================================
-           5. CONTENT CARDS & VOCAB GRIDS
+           5. CARDS & VOCABULARY GRIDS (INTERACTIVE)
            ========================================================================== */
         .view-section { display: none; animation: fadeUp 0.4s ease forwards; opacity: 0; transform: translateY(15px); }
         .view-section.active { display: block; }
         @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
 
         .uc-card {
-            background: rgba(24, 24, 27, 0.8); backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.05); border-radius: 12px; padding: 2.5rem;
+            background: rgba(24, 24, 27, 0.7); backdrop-filter: blur(15px);
+            border: var(--border-glass); border-radius: var(--radius-lg); padding: 3rem;
             margin-bottom: 2rem; position: relative; overflow: hidden;
         }
         
-        .hero-title { font-size: 2.5rem; margin-bottom: 0.5rem; font-weight: 900; text-transform: uppercase; }
-        .hero-subtitle { font-size: 1.1rem; color: var(--text-muted); margin-bottom: 2rem; }
+        .hero-title { font-size: 3rem; margin-bottom: 0.5rem; font-weight: 900; text-transform: uppercase; line-height: 1.1; }
+        .hero-subtitle { font-size: 1.2rem; color: var(--text-muted); margin-bottom: 2.5rem; }
         
-        .level-banner { display: inline-block; padding: 5px 15px; border-radius: 4px; font-weight: 800; font-family: 'Outfit'; font-size: 0.9rem; text-transform: uppercase; margin-bottom: 1rem; letter-spacing: 1px; }
+        .level-banner { display: inline-flex; align-items: center; gap: 10px; padding: 8px 20px; border-radius: 6px; font-weight: 800; font-family: 'Outfit'; font-size: 1rem; text-transform: uppercase; margin-bottom: 1.5rem; letter-spacing: 1px; }
         .lb-1 { background: rgba(16, 185, 129, 0.1); color: var(--uc-green); border: 1px solid var(--uc-green); }
         .lb-2 { background: rgba(245, 158, 11, 0.1); color: var(--uc-yellow); border: 1px solid var(--uc-yellow); }
         .lb-3 { background: rgba(225, 29, 72, 0.1); color: var(--uc-red); border: 1px solid var(--uc-red); }
+        .lb-4 { background: rgba(139, 92, 246, 0.1); color: var(--uc-purple); border: 1px solid var(--uc-purple); }
 
-        .vocab-list { display: flex; flex-direction: column; gap: 10px; }
+        /* Vocab Grid System */
+        .vocab-grid { display: grid; grid-template-columns: 1fr; gap: 15px; margin-bottom: 3rem; }
+        @media(min-width: 768px) { .vocab-grid { grid-template-columns: 1fr 1fr; } }
+        
         .v-item {
             background: rgba(0,0,0,0.4); border: 1px solid rgba(255,255,255,0.05);
-            padding: 15px 20px; border-radius: 8px; display: flex; flex-direction: column;
+            padding: 20px; border-radius: 12px; display: flex; gap: 20px; align-items: flex-start;
+            transition: 0.2s;
         }
-        @media(min-width: 768px) { .v-item { flex-direction: row; align-items: center; gap: 20px; } }
+        .v-item:hover { background: rgba(255,255,255,0.03); border-color: rgba(255,255,255,0.1); transform: translateY(-2px); }
         
-        .v-word { font-family: 'Outfit'; font-size: 1.3rem; font-weight: 800; color: var(--uc-white); width: 180px; flex-shrink: 0; }
-        .v-desc { flex: 1; font-size: 0.95rem; color: var(--text-main); }
-        .v-es { color: var(--text-muted); font-size: 0.85rem; font-style: italic; margin-top: 5px; }
+        .btn-audio {
+            width: 40px; height: 40px; border-radius: 50%; border: none; background: rgba(255,255,255,0.1);
+            color: var(--uc-white); cursor: pointer; flex-shrink: 0; transition: 0.2s; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; margin-top: 5px;
+        }
+        .btn-audio:hover { background: var(--uc-red); color: white; }
+        .btn-audio:active { transform: scale(0.9); }
+        .btn-audio.playing { background: var(--uc-red); color: white; animation: pulseAudio 1s infinite; }
+        @keyframes pulseAudio { 0% { box-shadow: 0 0 0 0 rgba(225, 29, 72, 0.5); } 70% { box-shadow: 0 0 0 15px rgba(225, 29, 72, 0); } 100% { box-shadow: 0 0 0 0 transparent; } }
+
+        .v-content { flex: 1; }
+        .v-word { font-family: 'Outfit'; font-size: 1.4rem; font-weight: 800; color: var(--uc-white); margin-bottom: 5px; line-height: 1.1; }
+        .v-es { color: var(--uc-yellow); font-size: 0.85rem; font-weight: 700; text-transform: uppercase; margin-bottom: 8px; letter-spacing: 1px; }
+        .v-desc { font-size: 0.95rem; color: var(--text-main); margin-bottom: 10px; }
+        .v-ex { background: rgba(0,0,0,0.5); padding: 10px 15px; border-radius: 6px; font-size: 0.9rem; font-style: italic; border-left: 3px solid var(--text-muted); color: var(--text-muted); }
 
         /* Grammar Box */
-        .grammar-code { background: #000; border: 1px solid #333; padding: 20px; border-radius: 8px; font-family: monospace; color: var(--uc-green); margin: 15px 0; font-size: 1.1rem; }
-        .highlight-word { color: var(--uc-red); font-weight: bold; }
+        .grammar-box { background: #000; border: 1px solid #333; padding: 25px; border-radius: 12px; margin-bottom: 20px; }
+        .g-rule { font-family: 'Outfit'; font-size: 1.2rem; color: var(--uc-purple); font-weight: 700; margin-bottom: 10px; border-bottom: 1px solid #333; padding-bottom: 5px; }
+        .g-ex { font-family: monospace; font-size: 1.1rem; color: var(--text-main); margin-bottom: 20px; }
+        .hl-word { color: var(--uc-red); font-weight: bold; }
 
         /* ==========================================================================
-           6. ACTIVITY 1: VIBE CHECK (VOCAB QUIZ)
+           6. ACTIVITY 1: VIBE CHECK
            ========================================================================== */
-        .q-box { background: rgba(255,255,255,0.02); border: 1px solid var(--bg-card); padding: 20px; border-radius: 12px; margin-bottom: 20px; }
-        .q-context { font-size: 1.1rem; font-style: italic; margin-bottom: 15px; color: var(--uc-white); border-left: 3px solid var(--uc-red); padding-left: 10px; }
-        .opt-grid { display: grid; grid-template-columns: 1fr; gap: 10px; }
+        .q-box { background: rgba(0,0,0,0.5); border: 1px solid var(--bg-card); padding: 30px; border-radius: 16px; margin-bottom: 20px; }
+        .q-context { font-size: 1.2rem; font-style: italic; margin-bottom: 20px; color: var(--uc-white); border-left: 4px solid var(--uc-yellow); padding-left: 15px; line-height: 1.5; }
+        
+        .opt-grid { display: grid; grid-template-columns: 1fr; gap: 12px; }
         @media(min-width: 600px){ .opt-grid { grid-template-columns: 1fr 1fr; } }
         
         .btn-opt {
-            background: var(--bg-base); border: 1px solid var(--bg-card); color: var(--text-main);
-            padding: 12px; border-radius: 6px; font-family: 'Inter'; font-weight: 600; cursor: pointer; transition: 0.2s;
+            background: var(--bg-base); border: 2px solid var(--bg-card); color: var(--text-main);
+            padding: 15px; border-radius: 8px; font-family: 'Inter'; font-weight: 600; font-size: 1.05rem; cursor: pointer; transition: 0.2s;
         }
         .btn-opt:hover { border-color: var(--text-muted); }
-        .btn-opt.selected { background: var(--uc-white); color: var(--bg-base); font-weight: 800; }
+        .btn-opt.selected { background: var(--uc-white); color: var(--bg-base); font-weight: 800; border-color: var(--uc-white); }
         .btn-opt.correct { background: var(--uc-green); color: #000; border-color: var(--uc-green); }
         .btn-opt.wrong { background: var(--uc-red); color: #FFF; border-color: var(--uc-red); }
 
         /* ==========================================================================
            7. ACTIVITY 2: F-MATRIX (SYNTAX)
            ========================================================================== */
-        .matrix-sentence { font-family: 'Outfit'; font-size: 1.6rem; font-weight: 800; text-align: center; margin: 30px 0; color: var(--uc-white); letter-spacing: 1px; }
-        .f-tag { color: var(--uc-red); text-decoration: underline; text-underline-offset: 4px; }
+        .matrix-sentence { font-family: 'Outfit'; font-size: 2rem; font-weight: 900; text-align: center; margin: 40px 0; color: var(--uc-white); }
+        .f-tag { color: var(--uc-red); text-decoration: underline; text-underline-offset: 6px; }
         
-        .part-grid { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-bottom: 30px; }
-        .btn-part { background: transparent; border: 2px solid var(--text-muted); color: var(--text-muted); padding: 10px 20px; border-radius: 30px; font-weight: 700; cursor: pointer; transition: 0.2s; text-transform: uppercase; font-size: 0.9rem; }
-        .btn-part.selected { border-color: var(--uc-red); color: var(--uc-red); }
+        .part-grid { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-bottom: 30px; }
+        .btn-part { background: rgba(255,255,255,0.05); border: 2px solid var(--text-muted); color: var(--text-muted); padding: 12px 25px; border-radius: 30px; font-weight: 700; cursor: pointer; transition: 0.2s; text-transform: uppercase; font-size: 1rem; font-family: 'Outfit'; }
+        .btn-part:hover { background: rgba(255,255,255,0.1); }
+        .btn-part.selected { border-color: var(--uc-purple); color: var(--uc-white); background: var(--uc-purple); box-shadow: 0 0 15px rgba(139, 92, 246, 0.4); }
 
         /* ==========================================================================
-           8. ACTIVITY 3: SKETCH GENERATOR (ROLEPLAY)
+           8. ACTIVITY 3: GROUP SKETCH GENERATOR
            ========================================================================== */
-        .slot-machine { background: #000; border: 2px solid var(--uc-red); border-radius: 12px; padding: 30px; text-align: center; position: relative; box-shadow: inset 0 0 30px rgba(225,29,72,0.1); }
+        .slot-machine { background: #000; border: 2px solid var(--bg-card); border-radius: 16px; padding: 40px; text-align: center; position: relative; box-shadow: inset 0 0 50px rgba(0,0,0,1); margin-bottom: 30px; }
         
-        .slot-title { font-size: 0.8rem; color: var(--uc-red); text-transform: uppercase; letter-spacing: 2px; font-weight: 800; margin-bottom: 5px; }
-        .slot-content { font-family: 'Outfit'; font-size: 1.5rem; color: var(--uc-white); font-weight: 700; margin-bottom: 25px; min-height: 40px; display: flex; align-items: center; justify-content: center; }
+        .slot-label { font-size: 0.85rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 2px; font-weight: 800; margin-bottom: 5px; }
         
-        .word-reqs { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
-        .req-chip { background: rgba(255,255,255,0.1); color: var(--uc-yellow); padding: 5px 15px; border-radius: 4px; font-family: monospace; font-weight: bold; font-size: 1.1rem; }
+        .slot-scenario { font-family: 'Outfit'; font-size: 1.8rem; color: var(--uc-yellow); font-weight: 800; margin-bottom: 30px; line-height: 1.3; min-height: 60px; display: flex; align-items: center; justify-content: center; }
+        
+        .slot-roles { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-bottom: 30px; min-height: 40px; }
+        .role-chip { background: rgba(225, 29, 72, 0.15); border: 1px solid var(--uc-red); color: var(--uc-white); padding: 8px 15px; border-radius: 6px; font-weight: 600; font-size: 1.1rem; }
+        
+        .slot-words { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; min-height: 40px; }
+        .word-req-chip { background: rgba(255,255,255,0.1); color: var(--uc-green); padding: 8px 20px; border-radius: 30px; font-family: monospace; font-weight: bold; font-size: 1.2rem; letter-spacing: 1px; border: 1px dashed var(--uc-green); }
 
-        .btn-generate { background: var(--uc-red); color: white; border: none; padding: 15px 30px; border-radius: 6px; font-family: 'Outfit'; font-weight: 800; font-size: 1.2rem; cursor: pointer; text-transform: uppercase; letter-spacing: 2px; transition: 0.2s; margin-top: 20px; width: 100%; box-shadow: 0 5px 15px rgba(225,29,72,0.3); }
-        .btn-generate:active { transform: scale(0.95); }
+        .btn-generate { background: var(--uc-white); color: var(--bg-base); border: none; padding: 18px 40px; border-radius: 8px; font-family: 'Outfit'; font-weight: 900; font-size: 1.3rem; cursor: pointer; text-transform: uppercase; letter-spacing: 2px; transition: 0.2s; width: 100%; box-shadow: 0 5px 20px rgba(255,255,255,0.2); }
+        .btn-generate:hover { background: var(--uc-yellow); box-shadow: 0 5px 25px rgba(245, 158, 11, 0.4); }
+        .btn-generate:active { transform: scale(0.96); }
 
         /* Utils */
-        #toast { position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%); background: var(--uc-white); color: var(--bg-base); padding: 12px 24px; border-radius: 4px; font-weight: 700; opacity: 0; transition: 0.3s; z-index: 9999; font-family: 'Outfit'; text-transform: uppercase; }
+        #toast { position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%); background: var(--uc-white); color: var(--bg-base); padding: 14px 30px; border-radius: 8px; font-weight: 800; opacity: 0; transition: 0.3s; z-index: 9999; font-family: 'Outfit'; text-transform: uppercase; letter-spacing: 1px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
         #toast.show { opacity: 1; transform: translateX(-50%) translateY(-10px); }
 
+        .footer { text-align: center; padding: 2rem; color: var(--text-muted); font-size: 0.9rem; margin-top: auto; border-top: var(--border-glass); background: #000; }
     </style>
 </head>
 <body>
@@ -234,7 +263,8 @@
         <div class="hazard-stripe red" style="position:absolute; top:0; left:0;"></div>
         <div class="gateway-logo"><img src="https://drive.google.com/thumbnail?id=1bOFY9XiVAv-WRQnVHXSnL5FHVEoK3UAp&sz=w300" alt="Logo"></div>
         <div class="badge-18">EXPLICIT CONTENT 18+</div>
-        <h1 class="gateway-title">Uncensored English</h1>
+        <h1 class="gateway-title">The Anatomy of Swearing</h1>
+        <p style="color:var(--text-muted); margin-bottom: 2rem; max-width: 500px;">Sociolinguistics & Real World English.</p>
         
         <input type="text" id="student-input" class="name-input" placeholder="Enter Adult ID..." autocomplete="off">
         <button class="btn-red" onclick="initSystem()">Acknowledge & Enter</button>
@@ -252,14 +282,16 @@
         
         <div class="nav-menu">
             <div class="nav-label">The Theory</div>
-            <button class="nav-link active" onclick="navTo('sec-spectrum', this)"><i class="fas fa-layer-group"></i> 1. The Spectrum</button>
-            <button class="nav-link" onclick="navTo('sec-fword', this)"><i class="fas fa-asterisk"></i> 2. The F-Grammar</button>
-            <button class="nav-link" onclick="navTo('sec-phrasal', this)"><i class="fas fa-link"></i> 3. Curse Phrasals</button>
+            <button class="nav-link active" onclick="navTo('sec-mild', this)"><i class="fas fa-smile-beam"></i> 1. Mild Slang (Lvl 1)</button>
+            <button class="nav-link" onclick="navTo('sec-medium', this)"><i class="fas fa-angry"></i> 2. Insults (Lvl 2)</button>
+            <button class="nav-link" onclick="navTo('sec-severe', this)"><i class="fas fa-skull"></i> 3. Profanity (Lvl 3)</button>
+            <button class="nav-link" onclick="navTo('sec-fword', this)"><i class="fas fa-asterisk"></i> 4. The F-Grammar</button>
+            <button class="nav-link" onclick="navTo('sec-phrasal', this)"><i class="fas fa-link"></i> 5. Curse Phrasals</button>
             
             <div class="nav-label" style="margin-top:20px;">The Production Lab</div>
             <button class="nav-link" onclick="navTo('sec-act1', this)"><i class="fas fa-check-square"></i> Act 1: Vibe Check</button>
             <button class="nav-link" onclick="navTo('sec-act2', this)"><i class="fas fa-code"></i> Act 2: The F-Matrix</button>
-            <button class="nav-link" onclick="navTo('sec-act3', this)" style="color:var(--uc-red); border:1px solid rgba(225,29,72,0.3);"><i class="fas fa-theater-masks"></i> Act 3: The Sketch</button>
+            <button class="nav-link" onclick="navTo('sec-act3', this)" style="color:var(--uc-yellow); border:1px solid rgba(245,158,11,0.3);"><i class="fas fa-theater-masks"></i> Act 3: Group Sketch</button>
         </div>
     </aside>
 
@@ -275,107 +307,103 @@
 
         <div class="content-container">
 
-            <section id="sec-spectrum" class="view-section active">
+            <section id="sec-mild" class="view-section active">
                 <div class="uc-card">
-                    <h1 class="hero-title">The Swear Spectrum</h1>
-                    <p class="hero-subtitle">Not all words carry the same weight.</p>
+                    <div class="level-banner lb-1"><i class="fas fa-check-circle"></i> Level 1: Everyday Slang (Mild)</div>
+                    <h1 class="hero-title">Frustration & Annoyance</h1>
+                    <p class="hero-subtitle">Commonly used. Acceptable among friends.</p>
                     
-                    <div class="level-banner lb-1">Level 1: Everyday Slang (Mild)</div>
-                    <p style="font-size:0.9rem; color:var(--text-muted); margin-bottom:15px;">Frustración común. Aceptable entre amigos, evitar en correos formales.</p>
-                    <div class="vocab-list" style="margin-bottom: 2rem;">
-                        <div class="v-item"><div class="v-word">Damn / Hell</div><div><div class="v-desc">Maldición / Demonios. Expresa frustración o da énfasis.</div><div class="v-es">"Damn, I forgot my wallet! What the hell is this?"</div></div></div>
-                        <div class="v-item"><div class="v-word">Crap / Sucks</div><div><div class="v-desc">Porquería / Apesta. Para quejarse de mala calidad o situaciones.</div><div class="v-es">"This movie is crap. Working on Sundays sucks."</div></div></div>
-                        <div class="v-item"><div class="v-word">Pissed off</div><div><div class="v-desc">Enojado / Emputado.</div><div class="v-es">"My boss is really pissed off right now."</div></div></div>
-                        <div class="v-item"><div class="v-word">Dumbass / Jerk</div><div><div class="v-desc">Pendejito / Patán. Insultos ligeros.</div><div class="v-es">"I locked my keys in the car, I'm a dumbass."</div></div></div>
-                    </div>
+                    <div class="vocab-grid" id="grid-lvl1">
+                        </div>
+                </div>
+            </section>
 
-                    <div class="level-banner lb-2">Level 2: Insults & Complaints (Medium)</div>
-                    <p style="font-size:0.9rem; color:var(--text-muted); margin-bottom:15px;">Intención de ofender. Clasificación R. NSFW.</p>
-                    <div class="vocab-list" style="margin-bottom: 2rem;">
-                        <div class="v-item"><div class="v-word">Shit</div><div><div class="v-desc">Mierda / Cosas / Chingaderas. Muy versátil.</div><div class="v-es">"I have too much shit to do today."</div></div></div>
-                        <div class="v-item"><div class="v-word">Bullshit</div><div><div class="v-desc">Mamadas / Mentiras absolutas.</div><div class="v-es">"Don't listen to him, that's bullshit."</div></div></div>
-                        <div class="v-item"><div class="v-word">Asshole / Dick</div><div><div class="v-desc">Culero / Imbécil. Para alguien arrogante o egoísta.</div><div class="v-es">"That driver cut me off, what an asshole."</div></div></div>
-                        <div class="v-item"><div class="v-word">Bitch</div><div><div class="v-desc">Perra / Cabrona (Noun) | Quejarse (Verb).</div><div class="v-es">"Stop bitching about the weather."</div></div></div>
-                    </div>
+            <section id="sec-medium" class="view-section">
+                <div class="uc-card">
+                    <div class="level-banner lb-2"><i class="fas fa-exclamation-triangle"></i> Level 2: Direct Insults (Medium)</div>
+                    <h1 class="hero-title">The Complaints</h1>
+                    <p class="hero-subtitle">Contains strong language. Not safe for work (NSFW).</p>
+                    
+                    <div class="vocab-grid" id="grid-lvl2">
+                        </div>
+                </div>
+            </section>
 
-                    <div class="level-banner lb-3">Level 3: Heavy Profanity (Severe)</div>
-                    <p style="font-size:0.9rem; color:var(--text-muted); margin-bottom:15px;">Agresivos, tabú o blasfemia. Atacan el valor de la persona.</p>
-                    <div class="vocab-list">
-                        <div class="v-item"><div class="v-word">Cunt</div><div><div class="v-desc">Coño. En EE.UU. es el tabú máximo para ofender a una mujer.</div><div class="v-es">*(Nota: En UK/Australia se usa como "güey" entre hombres).*</div></div></div>
-                        <div class="v-item"><div class="v-word">Piece of shit</div><div><div class="v-desc">Pedazo de mierda. Para alguien sin valor moral.</div><div class="v-es">"You stole from your mom? You're a piece of shit."</div></div></div>
-                        <div class="v-item"><div class="v-word">Goddamn</div><div><div class="v-desc">Maldita sea (Blasfemia). Muy ofensivo para religiosos en USA.</div><div class="v-es">"Open the goddamn door!"</div></div></div>
-                    </div>
+            <section id="sec-severe" class="view-section">
+                <div class="uc-card">
+                    <div class="level-banner lb-3"><i class="fas fa-skull-crossbones"></i> Level 3: Heavy Profanity (Severe)</div>
+                    <h1 class="hero-title">The Taboos</h1>
+                    <p class="hero-subtitle">Highly aggressive. Attacks a person's worth or religion.</p>
+                    
+                    <div class="vocab-grid" id="grid-lvl3">
+                        </div>
                 </div>
             </section>
 
             <section id="sec-fword" class="view-section">
                 <div class="uc-card">
+                    <div class="level-banner lb-4"><i class="fas fa-book"></i> Linguistic Analysis</div>
                     <h1 class="hero-title">The F-Word Grammar</h1>
                     <p class="hero-subtitle">The ultimate linguistic chameleon.</p>
                     
-                    <p style="font-size:1.1rem; color:#E4E4E7; margin-bottom:20px;">
-                        Lingüísticamente, es la única palabra en inglés que puede funcionar como casi cualquier categoría gramatical. No solo es un insulto, es un <strong>intensificador universal</strong>.
+                    <p style="font-size:1.1rem; margin-bottom:20px;">
+                        It is the only word in the English language that can be used as almost any part of speech. It is the ultimate intensifier.
                     </p>
 
-                    <div class="grammar-code">
-                        <span style="color:#71717A;">// 1. As a Verb (To ruin / To have sex)</span><br>
-                        He completely <span class="highlight-word">fucked</span> the project.<br><br>
+                    <div class="grammar-box">
+                        <div class="g-rule">1. As a Verb (To ruin / To have sex)</div>
+                        <div class="g-ex">"Don't <span class="hl-word">fuck</span> with me." / "He <span class="hl-word">fucked</span> the project."</div>
                         
-                        <span style="color:#71717A;">// 2. As an Exclamation (Frustration)</span><br>
-                        <span class="highlight-word">Fuck!</span> I hit my toe.<br><br>
+                        <div class="g-rule">2. As an Exclamation (Frustration)</div>
+                        <div class="g-ex">"<span class="hl-word">Fuck!</span> I stubbed my toe."</div>
 
-                        <span style="color:#71717A;">// 3. As an Adjective (Descriptive)</span><br>
-                        This is a <span class="highlight-word">fucking</span> disaster.<br><br>
+                        <div class="g-rule">3. As a Noun (A person or an amount)</div>
+                        <div class="g-ex">"He is a dumb <span class="hl-word">fuck</span>." / "I don't give a <span class="hl-word">fuck</span>."</div>
 
-                        <span style="color:#71717A;">// 4. As an Adverb (Intensifier = Very)</span><br>
-                        That car is <span class="highlight-word">fucking</span> fast.<br><br>
+                        <div class="g-rule">4. As an Adjective (Descriptive)</div>
+                        <div class="g-ex">"This is a <span class="hl-word">fucking</span> disaster."</div>
 
-                        <span style="color:#71717A;">// 5. As a Noun (Person or Amount)</span><br>
-                        I don't give a <span class="highlight-word">fuck</span>. (No me importa nada).<br><br>
+                        <div class="g-rule">5. As an Adverb (Intensifier = Very)</div>
+                        <div class="g-ex">"That car is <span class="hl-word">fucking</span> fast."</div>
 
-                        <span style="color:#71717A;">// 6. As an Infix (Inserted INSIDE a word)</span><br>
-                        Abso-<span class="highlight-word">fucking</span>-lutely.
+                        <div class="g-rule">6. As an Infix (Tmesis - Inserted INSIDE a word)</div>
+                        <div class="g-ex">"Abso-<span class="hl-word">fucking</span>-lutely" / "Un-<span class="hl-word">fucking</span>-believable."</div>
                     </div>
                 </div>
             </section>
 
             <section id="sec-phrasal" class="view-section">
                 <div class="uc-card">
+                    <div class="level-banner lb-4"><i class="fas fa-link"></i> Action Chunks</div>
                     <h1 class="hero-title">Curse Phrasal Verbs</h1>
-                    <p class="hero-subtitle">Action blocks used by native speakers.</p>
+                    <p class="hero-subtitle">Native speakers combine bad words with prepositions.</p>
                     
-                    <div class="vocab-list">
-                        <div class="v-item"><div class="v-word">To fuck up</div><div><div class="v-desc">Cometer un error grave / Arruinar algo.</div><div class="v-es">"I really fucked up my job interview."</div></div></div>
-                        <div class="v-item"><div class="v-word">To screw up</div><div><div class="v-desc">Regarla (Versión más aceptable de fuck up).</div><div class="v-es">"Please, don't screw up this presentation."</div></div></div>
-                        <div class="v-item"><div class="v-word">To piss off</div><div><div class="v-desc">Hacer enojar a alguien mucho.</div><div class="v-es">"His attitude really pisses me off."</div></div></div>
-                        <div class="v-item"><div class="v-word">To fuck off</div><div><div class="v-desc">Vete a la mierda (Forma agresiva de pedir que te dejen en paz).</div><div class="v-es">"I told the salesman to fuck off."</div></div></div>
-                        <div class="v-item"><div class="v-word">To bitch about</div><div><div class="v-desc">Quejarse incesantemente de algo.</div><div class="v-es">"She is always bitching about her coworkers."</div></div></div>
-                        <div class="v-item"><div class="v-word">To fuck around</div><div><div class="v-desc">Perder el tiempo / Jugar con fuego.</div><div class="v-es">"Stop fucking around and finish the report."</div></div></div>
-                    </div>
+                    <div class="vocab-grid" id="grid-phrasals">
+                        </div>
                 </div>
             </section>
 
             <section id="sec-act1" class="view-section">
                 <div class="uc-card">
-                    <div class="level-banner lb-2">Activity 1</div>
+                    <div class="level-banner" style="background:#FFF; color:#000;">Activity 1</div>
                     <h1 class="hero-title">The Vibe Check</h1>
-                    <p class="hero-subtitle">Read the context. Choose the right word.</p>
+                    <p class="hero-subtitle">Read the context. Choose the word that fits the level of anger.</p>
                     
                     <div id="act1-container">
                         </div>
                     
-                    <button class="btn-red" id="btn-act1-next" onclick="act1Next()" style="display:none; margin-top:20px;">NEXT CONTEXT</button>
+                    <button class="btn-red" id="btn-act1-next" onclick="act1Next()" style="display:none; margin-top:20px; width:100%;">NEXT SCENARIO</button>
                 </div>
             </section>
 
             <section id="sec-act2" class="view-section">
                 <div class="uc-card">
-                    <div class="level-banner lb-3">Activity 2</div>
+                    <div class="level-banner lb-4">Activity 2</div>
                     <h1 class="hero-title">The F-Matrix</h1>
-                    <p class="hero-subtitle">Identify the grammatical function of the F-Word.</p>
+                    <p class="hero-subtitle">Identify the grammatical function of the highlighted word.</p>
                     
-                    <div style="background:rgba(0,0,0,0.5); padding:30px; border-radius:12px; border:1px solid var(--bg-card);">
-                        <div class="slot-title">Target Sentence</div>
+                    <div style="background:rgba(0,0,0,0.6); padding:40px 20px; border-radius:16px; border:1px solid #333;">
+                        <div style="text-align:center; color:var(--text-muted); text-transform:uppercase; font-weight:800; letter-spacing:2px; margin-bottom:10px;">Target Sentence</div>
                         <div class="matrix-sentence" id="act2-sentence">"That was a <span class="f-tag">fucking</span> good movie."</div>
                         
                         <div class="part-grid">
@@ -384,31 +412,32 @@
                             <button class="btn-part" onclick="act2Select('Adjective', this)">Adjective</button>
                             <button class="btn-part" onclick="act2Select('Adverb', this)">Adverb</button>
                             <button class="btn-part" onclick="act2Select('Exclamation', this)">Exclamation</button>
+                            <button class="btn-part" onclick="act2Select('Infix', this)">Infix</button>
                         </div>
                     </div>
                     
-                    <button class="btn-red" id="btn-act2-eval" onclick="act2Evaluate()" disabled style="margin-top:20px;">ANALYZE</button>
+                    <button class="btn-red" id="btn-act2-eval" onclick="act2Evaluate()" disabled style="margin-top:20px; width:100%;">ANALYZE SYNTAX</button>
                 </div>
             </section>
 
             <section id="sec-act3" class="view-section">
                 <div class="uc-card">
-                    <div class="level-banner" style="background:#FFF; color:#000;">Activity 3</div>
-                    <h1 class="hero-title">The Sketch Generator</h1>
-                    <p class="hero-subtitle">Live Roleplay. Press the button to get your scenario.</p>
+                    <div class="level-banner lb-2">Activity 3: Production</div>
+                    <h1 class="hero-title">Group Sketch Generator</h1>
+                    <p class="hero-subtitle">Get together in groups of 3 to 5. Roll the machine to get your scenario, roles, and mandatory vocabulary. You have 5 minutes to prepare a roleplay.</p>
                     
                     <div class="slot-machine">
-                        <div class="slot-title">Location & Problem</div>
-                        <div class="slot-content" id="sk-scenario">???</div>
+                        <div class="slot-label">The Situation</div>
+                        <div class="slot-scenario" id="sk-scenario">Press the button to generate...</div>
                         
-                        <div class="slot-title">Role A vs Role B</div>
-                        <div class="slot-content" id="sk-roles" style="color:var(--uc-red); font-size:1.2rem;">??? vs ???</div>
+                        <div class="slot-label">Roles to assign (Choose depending on group size)</div>
+                        <div class="slot-roles" id="sk-roles">
+                            <div class="role-chip" style="background:transparent; border-color:var(--text-muted); color:var(--text-muted);">Waiting...</div>
+                        </div>
                         
-                        <div class="slot-title">Mandatory Vocabulary</div>
-                        <div class="word-reqs" id="sk-words">
-                            <div class="req-chip">???</div>
-                            <div class="req-chip">???</div>
-                            <div class="req-chip">???</div>
+                        <div class="slot-label">Mandatory Vocabulary (Use all 5 in the sketch)</div>
+                        <div class="slot-words" id="sk-words">
+                            <div class="word-req-chip" style="border-color:var(--text-muted); color:var(--text-muted);">...</div>
                         </div>
                     </div>
 
@@ -417,12 +446,17 @@
             </section>
 
         </div> 
+        
+        <footer class="footer">
+            <div style="font-family:'Outfit'; font-weight:900; font-size:1.2rem; color:var(--uc-white); margin-bottom:5px;">RATORS CLUB ACADEMY</div>
+            <p>Uncensored English & Sociolinguistics &copy; 2026</p>
+        </footer>
     </main>
 
     <div id="toast">Mensaje</div>
 
     <script>
-        /* --- CORE SYSTEM --- */
+        /* --- 1. CORE SYSTEM --- */
         let studentStr = "Adult";
 
         function showToast(msg, type = 'default') {
@@ -442,6 +476,8 @@
             
             document.getElementById('gateway').style.opacity = '0';
             setTimeout(() => document.getElementById('gateway').style.display = 'none', 400);
+            
+            loadVoices();
         }
 
         function toggleSidebar() {
@@ -466,29 +502,123 @@
             window.scrollTo({top: 0, behavior: 'smooth'});
         }
 
-        /* --- ACT 1: VIBE CHECK ENGINE --- */
-        const act1DB = [
-            { ctx: "You are at work. The printer breaks right before a meeting.", opts: ["Piece of shit", "Crap", "Motherfucker"], ans: 1 },
-            { ctx: "Someone crashes into your new car on purpose and laughs.", opts: ["Dumbass", "Asshole", "Sucks"], ans: 1 },
-            { ctx: "You find out your best friend lied to you for a year.", opts: ["That's bullshit", "Oh shoot", "Heck"], ans: 0 },
-            { ctx: "You drop your keys on the floor.", opts: ["Damn it", "Son of a bitch", "Scumbag"], ans: 0 },
-            { ctx: "Your boss is yelling at everyone today.", opts: ["He is pissed off", "He is fucking around", "He is a dipshit"], ans: 0 }
+        /* --- 2. AUDIO ENGINE (TTS) --- */
+        const synth = window.speechSynthesis;
+        let engVoice = null;
+
+        function loadVoices() {
+            const voices = synth.getVoices();
+            engVoice = voices.find(v => v.lang.includes('en-US') && v.name.includes('Google')) || voices.find(v => v.lang.includes('en'));
+        }
+        if (speechSynthesis.onvoiceschanged !== undefined) { speechSynthesis.onvoiceschanged = loadVoices; }
+
+        function playAudio(word) {
+            if (synth.speaking) synth.cancel();
+            const btn = event.currentTarget;
+            const u = new SpeechSynthesisUtterance(word);
+            if (engVoice) u.voice = engVoice;
+            u.lang = 'en-US'; u.rate = 0.85; 
+            
+            u.onstart = () => {
+                document.querySelectorAll('.btn-audio').forEach(b => b.classList.remove('playing'));
+                if(btn) btn.classList.add('playing');
+            };
+            u.onend = () => { if(btn) btn.classList.remove('playing'); };
+            synth.speak(u);
+        }
+
+        /* --- 3. VOCABULARY DATA & RENDERER --- */
+        const lvl1 = [
+            { w: "Damn", es: "Maldición / Carajo", d: "Used to express frustration or anger.", ex: "Damn, I forgot my keys!" },
+            { w: "Hell", es: "Demonios / Infierno", d: "Used to add emphasis to a question.", ex: "What the hell are you doing?" },
+            { w: "Crap", es: "Porquería", d: "A milder synonym for shit (bad quality).", ex: "This phone is crap." },
+            { w: "Sucks", es: "Apesta / Es basura", d: "Used to say something is very bad.", ex: "Working on weekends sucks." },
+            { w: "Pissed / Pissed off", es: "Emputado / Enojado", d: "To be very angry.", ex: "My boss is really pissed off right now." },
+            { w: "Ass", es: "Trasero / Tonto", d: "A person's rear end, or a foolish person.", ex: "Don't be an ass." },
+            { w: "Jerk", es: "Patán / Idiota", d: "A mean, selfish person.", ex: "Her ex is a total jerk." },
+            { w: "Dumbass", es: "Pendejito", d: "A stupid person.", ex: "I locked my keys in the car, I'm a dumbass." },
+            { w: "Freaking", es: "Pinche", d: "A socially acceptable substitute for fucking.", ex: "This pizza is freaking delicious." },
+            { w: "Heck", es: "Diablos", d: "A polite substitute for hell.", ex: "What the heck is that?" }
         ];
-        let act1Idx = 0;
-        let act1Locked = false;
+
+        const lvl2 = [
+            { w: "Shit", es: "Mierda / Cosas", d: "Feces, or a versatile word for stuff/bad situations.", ex: "I have too much shit to do today." },
+            { w: "Bullshit", es: "Mamadas / Mentiras", d: "Complete lies or nonsense.", ex: "Don't listen to him, that's bullshit." },
+            { w: "Asshole", es: "Culero / Pendejo", d: "An arrogant or highly annoying person.", ex: "That driver is an asshole." },
+            { w: "Bitch", es: "Perra / Cabrona", d: "An unpleasant person, or to complain (verb).", ex: "Stop bitching about the heat." },
+            { w: "Bastard", es: "Cabrón / Bastardo", d: "A cruel or despicable man.", ex: "That bastard stole my idea." },
+            { w: "Dick", es: "Pito / Imbécil", d: "An obnoxious and selfish man.", ex: "Stop acting like a dick." },
+            { w: "Douchebag", es: "Mamador / Cretino", d: "An arrogant person who thinks they are cool.", ex: "He wears sunglasses indoors, what a douchebag." },
+            { w: "Jackass", es: "Pendejo / Temerario", d: "A reckless fool who does stupid things.", ex: "That jackass almost crashed his car." },
+            { w: "Dipshit", es: "Idiota total", d: "An incredibly stupid or clueless person.", ex: "Tell that dipshit to be quiet." },
+            { w: "Son of a bitch", es: "Hijo de puta", d: "An exclamation of anger, or an insult.", ex: "Son of a bitch, I broke my screen!" }
+        ];
+
+        const lvl3 = [
+            { w: "Cunt", es: "Coño / Puta", d: "Taboo in USA for women. Used casually in UK/AUS for men.", ex: "In USA: Never say this word." },
+            { w: "Cocksucker", es: "Chupavergas", d: "A highly offensive insult.", ex: "Tell that cocksucker I want my money." },
+            { w: "Pussy", es: "Marica / Cobarde", d: "A coward or weak person.", ex: "Jump into the pool, don't be a pussy." },
+            { w: "Whore", es: "Puta / Ramera", d: "A prostitute; severe insult.", ex: "Used to shame someone severely." },
+            { w: "Slut", es: "Zorra", d: "Someone shamed for having many partners.", ex: "Used to shame sexual behavior." },
+            { w: "Piece of shit", es: "Pedazo de mierda", d: "A worthless, terrible human being.", ex: "You lied to your mom? You're a piece of shit." },
+            { w: "Goddamn", es: "Maldita sea", d: "A blasphemous curse word expressing extreme anger.", ex: "Open the goddamn door!" },
+            { w: "Scumbag", es: "Escoria / Basura", d: "A person with absolutely no morals.", ex: "The scumbag who robbed the store was arrested." },
+            { w: "Twat", es: "Coño / Pendejo", d: "A stupid or annoying person (UK/US).", ex: "Don't listen to that twat." },
+            { w: "Shithead", es: "Cabeza de mierda", d: "A completely foolish person.", ex: "Look what you did, you absolute shithead." }
+        ];
+
+        const phrasals = [
+            { w: "To fuck up", es: "Arruinarla / Cagarla", d: "To make a terrible mistake.", ex: "I really fucked up my job interview." },
+            { w: "To screw up", es: "Regarla", d: "A milder version of fuck up.", ex: "Please, don't screw up this presentation." },
+            { w: "To piss off", es: "Hacer enojar", d: "To make someone extremely angry.", ex: "His attitude really pisses me off." },
+            { w: "To fuck off", es: "Vete a la mierda", d: "To tell someone to go away.", ex: "I told the salesman to fuck off." },
+            { w: "To bitch about", es: "Quejarse incesantemente", d: "To complain continuously.", ex: "She is always bitching about her coworkers." },
+            { w: "To fuck around", es: "Perder el tiempo", d: "To waste time doing nothing.", ex: "Stop fucking around and finish your work." },
+            { w: "To fuck over", es: "Joder a alguien / Traicionar", d: "To betray or exploit someone.", ex: "The insurance company fucked me over." },
+            { w: "To dick around", es: "Hacer pendejadas", d: "To behave in a silly or unproductive way.", ex: "We spent the afternoon dicking around." }
+        ];
+
+        // Flat array for the Sketch Generator
+        const globalVocabPool = [...lvl1, ...lvl2, ...lvl3, ...phrasals].map(i => i.w.replace("To ", "").toLowerCase());
+
+        function renderGrid(containerId, dataArray) {
+            const container = document.getElementById(containerId);
+            let html = '';
+            dataArray.forEach(item => {
+                html += `
+                <div class="v-item">
+                    <div class="v-content">
+                        <div class="v-word">${item.w}</div>
+                        <div class="v-es">${item.es}</div>
+                        <div class="v-desc">${item.d}</div>
+                        <div class="v-ex">${item.ex}</div>
+                    </div>
+                    <button class="btn-audio" onclick="playAudio('${item.w.replace(/'/g, "\\'")}', this)"><i class="fas fa-volume-up"></i></button>
+                </div>`;
+            });
+            container.innerHTML = html;
+        }
+
+        // --- ACT 1: VIBE CHECK ---
+        const act1DB = [
+            { ctx: "You are at the office. You drop a pencil on the floor.", opts: ["Motherfucker!", "Oh, crap.", "You piece of shit."], ans: 1 },
+            { ctx: "Someone steals your wallet and runs away.", opts: ["That bastard!", "What a dumbass.", "He is freaking out."], ans: 0 },
+            { ctx: "Your friend tells you a story that is obviously a lie.", opts: ["That's bullshit.", "You are pissed off.", "That sucks."], ans: 0 },
+            { ctx: "You find out you have to work on your birthday.", opts: ["I'm a dipshit.", "Well, that sucks.", "You scumbag."], ans: 1 },
+            { ctx: "A guy cuts you off in traffic and gives you the middle finger.", opts: ["What an asshole!", "He is dicking around.", "Heck no."], ans: 0 }
+        ];
+        let act1Idx = 0; let act1Locked = false;
 
         function loadAct1() {
             if(act1Idx >= act1DB.length) {
-                document.getElementById('act1-container').innerHTML = `<h3 style="color:var(--uc-green); text-align:center;">Vibe Check Complete!</h3>`;
+                document.getElementById('act1-container').innerHTML = `<h3 style="color:var(--uc-green); text-align:center;">Vibe Check Passed!</h3>`;
                 document.getElementById('btn-act1-next').style.display = 'none';
                 return;
             }
             act1Locked = false;
             const data = act1DB[act1Idx];
             let html = `<div class="q-box"><div class="q-context">"${data.ctx}"</div><div class="opt-grid">`;
-            data.opts.forEach((opt, i) => {
-                html += `<button class="btn-opt" onclick="evalAct1(${i}, this)">${opt}</button>`;
-            });
+            data.opts.forEach((opt, i) => { html += `<button class="btn-opt" onclick="evalAct1(${i}, this)">${opt}</button>`; });
             html += `</div></div>`;
             document.getElementById('act1-container').innerHTML = html;
             document.getElementById('btn-act1-next').style.display = 'none';
@@ -509,23 +639,22 @@
             }
             document.getElementById('btn-act1-next').style.display = 'block';
         }
-
         function act1Next() { act1Idx++; loadAct1(); }
 
-        /* --- ACT 2: F-MATRIX ENGINE --- */
+        // --- ACT 2: F-MATRIX ---
         const act2DB = [
             { s: "This is a <span class='f-tag'>fucking</span> disaster.", ans: "Adjective" },
             { s: "That car is <span class='f-tag'>fucking</span> fast.", ans: "Adverb" },
             { s: "I don't give a <span class='f-tag'>fuck</span>.", ans: "Noun" },
             { s: "<span class='f-tag'>Fuck!</span> I lost my wallet.", ans: "Exclamation" },
-            { s: "He <span class='f-tag'>fucked</span> up the presentation.", ans: "Verb" }
+            { s: "He completely <span class='f-tag'>fucked</span> the project.", ans: "Verb" },
+            { s: "Abso-<span class='f-tag'>fucking</span>-lutely.", ans: "Infix" }
         ];
-        let act2Idx = 0;
-        let act2Selected = null;
+        let act2Idx = 0; let act2Selected = null;
 
         function loadAct2() {
             if(act2Idx >= act2DB.length) {
-                document.getElementById('act2-sentence').innerHTML = `<span style="color:var(--uc-green);">Matrix Complete.</span>`;
+                document.getElementById('act2-sentence').innerHTML = `<span style="color:var(--uc-green);">Analysis Complete.</span>`;
                 document.querySelector('.part-grid').style.display = 'none';
                 document.getElementById('btn-act2-eval').style.display = 'none';
                 return;
@@ -537,7 +666,7 @@
                 b.style.borderColor = "var(--text-muted)"; b.style.color = "var(--text-muted)";
             });
             document.getElementById('btn-act2-eval').disabled = true;
-            document.getElementById('btn-act2-eval').innerText = "ANALYZE";
+            document.getElementById('btn-act2-eval').innerText = "ANALYZE SYNTAX";
         }
 
         function act2Select(type, btn) {
@@ -549,74 +678,89 @@
 
         function act2Evaluate() {
             const btnEval = document.getElementById('btn-act2-eval');
-            if(btnEval.innerText === "NEXT SENTENCE") {
-                act2Idx++; loadAct2(); return;
-            }
+            if(btnEval.innerText === "NEXT SENTENCE") { act2Idx++; loadAct2(); return; }
             
             const correctAns = act2DB[act2Idx].ans;
             const selectedBtn = document.querySelector('.btn-part.selected');
             
             if(act2Selected === correctAns) {
-                selectedBtn.style.borderColor = "var(--uc-green)";
-                selectedBtn.style.color = "var(--uc-green)";
+                selectedBtn.style.borderColor = "var(--uc-green)"; selectedBtn.style.color = "var(--uc-green)";
                 confetti({ particleCount: 30, spread: 50, origin: { y: 0.8 } });
             } else {
                 selectedBtn.style.borderColor = "var(--uc-red)";
-                showToast(`Wrong. It's an ${correctAns}`, 'error');
+                showToast(`Incorrect. The answer is: ${correctAns}`, 'error');
             }
             btnEval.innerText = "NEXT SENTENCE";
         }
 
-        /* --- ACT 3: SKETCH GENERATOR --- */
-        const scenarios = [
-            "Your roommate ate your expensive food from the fridge.",
-            "You just got fired for something you didn't do.",
-            "Your partner bought an ugly $2,000 couch without asking.",
-            "A police officer pulled you over but you are late for a flight.",
-            "You are returning a broken TV but the cashier refuses to help."
+        // --- ACT 3: GROUP SKETCH GENERATOR ---
+        const sketchDB = [
+            {
+                s: "A chaotic family dinner where a terrible secret is revealed.",
+                roles: ["The angry mother", "The guilty son", "The nosy neighbor", "The drunk uncle", "The innocent sibling"]
+            },
+            {
+                s: "A bank robbery goes wrong because the getaway driver fell asleep.",
+                roles: ["The furious mastermind", "The sleepy driver", "The panicked hostage", "The confused cop"]
+            },
+            {
+                s: "The company is going bankrupt and the CEO blames the IT department.",
+                roles: ["The arrogant CEO", "The nervous IT guy", "The snitch coworker", "The HR manager", "The angry investor"]
+            },
+            {
+                s: "A road trip where the car breaks down and someone threw the map out the window.",
+                roles: ["The stressed driver", "The idiot who threw the map", "The hungry passenger", "The creepy mechanic"]
+            },
+            {
+                s: "You are returning a broken TV but the store refuses to give a refund.",
+                roles: ["The screaming customer", "The lazy cashier", "The useless manager", "The security guard"]
+            }
         ];
-        const roles = [
-            ["Angry Roommate", "Guilty Roommate"],
-            ["Furious Employee", "Heartless Boss"],
-            ["Shocked Partner", "Defensive Partner"],
-            ["Stressed Driver", "Strict Cop"],
-            ["Angry Customer", "Lazy Cashier"]
-        ];
-        const vocabPool = ["bullshit", "screw up", "pissed off", "crap", "asshole", "damn", "make an excuse", "bitch about"];
 
         function generateSketch() {
-            // Slot machine effect
             const btn = document.querySelector('.btn-generate');
             btn.disabled = true;
             
             let count = 0;
             const interval = setInterval(() => {
-                document.getElementById('sk-scenario').innerText = "Analyzing variables...";
-                document.getElementById('sk-roles').innerText = "Connecting...";
+                document.getElementById('sk-scenario').innerText = "Loading scenario...";
+                document.getElementById('sk-roles').innerHTML = `<div class="role-chip" style="color:var(--text-muted);">Assigning roles...</div>`;
+                document.getElementById('sk-words').innerHTML = `<div class="word-req-chip" style="color:var(--text-muted);">Fetching vocabulary...</div>`;
+                
                 count++;
-                if(count > 10) {
+                if(count > 12) {
                     clearInterval(interval);
                     
-                    const randIdx = Math.floor(Math.random() * scenarios.length);
-                    document.getElementById('sk-scenario').innerText = scenarios[randIdx];
-                    document.getElementById('sk-roles').innerText = `${roles[randIdx][0]} VS ${roles[randIdx][1]}`;
+                    // Pick Scenario
+                    const randData = sketchDB[Math.floor(Math.random() * sketchDB.length)];
+                    document.getElementById('sk-scenario').innerText = `"${randData.s}"`;
                     
-                    // Pick 3 random words
-                    let shuffledVocab = vocabPool.sort(() => 0.5 - Math.random()).slice(0, 3);
-                    document.getElementById('sk-words').innerHTML = `
-                        <div class="req-chip">${shuffledVocab[0]}</div>
-                        <div class="req-chip">${shuffledVocab[1]}</div>
-                        <div class="req-chip">${shuffledVocab[2]}</div>
-                    `;
+                    // Render Roles
+                    let rolesHtml = '';
+                    randData.roles.forEach(r => { rolesHtml += `<div class="role-chip">${r}</div>`; });
+                    document.getElementById('sk-roles').innerHTML = rolesHtml;
+                    
+                    // Pick 5 random words from global pool
+                    let shuffledVocab = globalVocabPool.sort(() => 0.5 - Math.random()).slice(0, 5);
+                    let wordsHtml = '';
+                    shuffledVocab.forEach(w => { wordsHtml += `<div class="word-req-chip">${w}</div>`; });
+                    document.getElementById('sk-words').innerHTML = wordsHtml;
                     
                     btn.disabled = false;
-                    confetti({ particleCount: 100, spread: 80, origin: { y: 0.6 }, colors: ['#E11D48', '#F59E0B'] });
+                    confetti({ particleCount: 150, spread: 90, origin: { y: 0.5 }, colors: ['#E11D48', '#F59E0B', '#FAFAFA'] });
                 }
-            }, 50);
+            }, 60);
         }
 
-        // Initialize
-        window.onload = () => { loadAct1(); loadAct2(); };
+        // Initialize All
+        window.onload = () => {
+            renderGrid('grid-lvl1', lvl1);
+            renderGrid('grid-lvl2', lvl2);
+            renderGrid('grid-lvl3', lvl3);
+            renderGrid('grid-phrasals', phrasals);
+            loadAct1();
+            loadAct2();
+        };
 
     </script>
 </body>
